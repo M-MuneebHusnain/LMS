@@ -1,0 +1,659 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+header {
+  width: 100%;
+  height: 10rem;
+  background: royalblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10rem;
+}
+
+header span {
+  font: 800 2.5rem sans-serif;
+  color: white;
+  z-index: 2;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 50%;
+}
+
+.menu a {
+  font: 500 2.5rem sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+a.logout-btn {
+  width: 20rem;
+  height: 5rem;
+  border-radius: 1rem;
+  background: navy;
+  color: yellow;
+  display: grid;
+  place-items: center;
+}
+
+.burger {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  display: none;
+}
+
+.burger div {
+  width: 100%;
+  height: 1rem;
+  background-color: white;
+  transition: transform 0.25s ease-in-out;
+}
+
+.burger.active div:nth-child(1) {
+  transform: rotate(45deg) translateY(27.5px);
+}
+
+.burger.active div:nth-child(2) {
+  display: none;
+}
+
+.burger.active div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-27.5px);
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10rem;
+  min-height: 100vh;
+}
+
+h1{
+  font: 5rem sans-serif;
+  text-transform: uppercase;
+}
+
+.actions{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 3rem 0;
+}
+
+.actions button{
+  width: 20rem;
+  height: 5rem;
+  background: royalblue;
+  color: white;
+  font: 300 2rem sans-serif;
+  margin-right: 2rem;
+}
+
+.actions button.all-action,
+.actions button.all-actionT,
+.actions button.all-actionC{
+  background: crimson;
+  display: none;
+  place-items: center;
+}
+
+.assign-student-info{
+  grid-column: 1/3;
+}
+
+.assign-student-info span{
+  font: 300 2rem sans-serif;
+  flex-basis: 40%;
+}
+
+.assign-student-info input{
+  margin-right: 2rem;
+}
+
+.assign-student,
+.add-student,
+.add-teacher,
+.add-course{
+  width: 100%;
+  height: 30rem;
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2rem;
+  place-items: center;
+  padding: 3rem 0;
+  margin: 5rem 0;
+}
+
+.assign-student h3,
+.add-student h3,
+.add-teacher h3,
+.add-course h3{
+  font: 500 3rem sans-serif;
+  grid-column: 1/3;
+  grid-row: 1/2;
+  justify-self: flex-start;
+}
+.assign-student div,
+.add-student div,
+.add-teacher div,
+.add-course div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-student div span,
+.add-teacher div span{
+  font: 300 2rem sans-serif;
+  flex-basis: 25%;
+}
+
+.add-course div span{
+  font: 300 2rem sans-serif;
+  flex-basis: 35%;
+}
+
+.assign-student div input,
+.add-student div input,
+.add-teacher div input,
+.add-course div input{
+  border: 1px solid black;
+  width: 100%;
+  height: 5rem;
+  padding: 0 2rem;
+  font: 300 1.5rem sans-serif;
+}
+
+.assign-student button,
+.add-student button,
+.add-teacher button,
+.add-course button{
+  width: 50%;
+  justify-self: flex-end;
+  height: 5rem;
+  background-color: royalblue;
+  font: 300 2rem sans-serif;
+  grid-column: 2/3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: 4/5;
+  margin: 0;
+}
+
+.remove-student,
+.remove-teacher,
+.remove-course{
+  width: 100%;
+  height: 20rem;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 5rem 0;
+}
+
+.remove-student h3,
+.remove-teacher h3,
+.remove-course h3{
+  font: 500 3rem sans-serif;
+}
+
+.remove-student div,
+.remove-teacher div,
+.remove-course div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.remove-student div span,
+.remove-teacher div span,
+.remove-course div span{
+  font: 300 2rem sans-serif;
+  flex-basis: 10%;
+}
+
+.remove-student div input,
+.remove-teacher div input,
+.remove-course div input{
+  border: 1px solid black;
+  height: 5rem;
+  width: 30%;
+  padding: 0 2rem;
+}
+
+.remove-student button,
+.remove-teacher button,
+.remove-course button{
+  width: 40%;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  font: 300 2rem sans-serif;
+  color: white;
+  background-color: royalblue;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.single-student,
+.single-teacher,
+.single-course{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5rem 0;
+}
+
+.single-student img,
+.single-teacher img,
+.single-course img{
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.single-student .name,
+.single-student span,
+.single-teacher .name,
+.single-teacher span
+{
+  font: 300 2rem sans-serif;
+}
+
+.single-course .name,
+.single-course span{
+  font: 300 2rem sans-serif;
+}
+
+.single-course .name{
+  flex-basis: 20%;
+}
+.teacher-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 20%;
+}
+.teacher-name{
+  font-size: 2rem;
+}
+
+.course-container,
+.student-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-basis: 50%;
+}
+
+.student-container{
+  flex-basis: 30%;
+}
+
+.course,
+.student{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.course-name,
+.student-id{
+  font: 300 2rem sans-serif;
+}
+
+.course button,
+.student button{
+  width: 10rem;
+  height: 3rem;
+  background-color: royalblue;
+  color: white;
+  font: 300 1.5rem sans-serif;
+}
+
+footer {
+  padding: 5rem 10rem;
+  width: 100%;
+  height: 40rem;
+  background-color: royalblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer span {
+  font: 300 3rem sans-serif;
+  color: white;
+}
+
+.footer-info {
+  display: grid;
+  height: 100%;
+}
+
+.footer-info div {
+  display: flex;
+  align-items: center;
+}
+
+.footer-info svg {
+  width: 4rem;
+  height: 4rem;
+  fill: #fff;
+  margin-right: 3rem;
+}
+
+.footer-info div span {
+  font: 300 2.5rem sans-serif;
+  color: white;
+}
+
+.moveToTop {
+  width: 10rem;
+  height: 10rem;
+  fill: yellow;
+  background: navy;
+  padding: 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+@media (max-width: 1400px) {
+  section,
+  header, footer {
+    padding: 5rem;
+  }
+  footer {
+    flex-direction: column;
+    height: 100%;
+  }
+  .footer-info {
+    width: 100%;
+    justify-content: space-between;
+    column-gap: 5rem;
+  }
+  footer span {
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 1250px) {
+  header {
+    position: relative;
+  }
+  .add-course h3,
+  .add-teacher h3,
+  .add-student h3{
+    grid-column: 1/2;
+  }
+  .add-course, 
+  .add-teacher,
+  .add-student{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 100%;
+  }
+  .add-course button,
+  .add-teacher button,
+  .add-student button{
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+  .remove-course div span,
+  .remove-teacher div span,
+  .remove-student div span{
+    flex-basis: 40%;
+  }
+  .remove-course div span,
+  .remove-teacher div span,
+  .remove-student div input{
+    width: 100%;
+  }
+
+  .assign-student-info{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .assign-student-info div{
+    margin: 2rem 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+  header .menu {
+    position: absolute;
+    top: -30rem;
+    width: 100%;
+    height: 30rem;
+    flex-basis: unset;
+    background-color: royalblue;
+    left: 0;
+    padding: 5rem;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: top 0.25s ease-in-out;
+    opacity: 0;
+  }
+  header .menu.active {
+    top: 10rem;
+    opacity: 1;
+  }
+
+  .teacher-container,
+  .student-container{
+    flex-basis: 20%;
+  }
+}
+
+@media(max-width: 950px){
+  .single-course{
+    flex-direction: column;
+  }
+  .single-course img{
+    margin-bottom: 2rem;
+  }
+  .single-course .name,
+  .single-course span{
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .teacher-container{
+    margin-bottom: 3rem;
+  }
+
+  .teacher-container, .student-container{
+    width: 100%;
+  }
+}
+
+@media (max-width: 765px) {
+  .footer-info div span {
+    font-size: 2rem;
+  }
+  .loginForm {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 650px) {
+  section, header,footer {
+    padding: 2.5rem;
+  }
+
+  h1{
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  header .menu {
+    align-items: center;
+    top: -100vh;
+    height: calc(100vh - 10rem);
+    justify-content: space-evenly;
+  }
+  .actions{
+    flex-direction: column;
+  }
+
+  .assign-student-info div{
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3rem 0;
+  }
+  .assign-student-info span{
+    margin: 1rem 0;
+  }
+
+  .assign-student{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 40rem;
+  }
+  .assign-student button{
+    width: 100%;
+    grid-column: 1/3;
+  }
+
+  .actions button{
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .add-course div,
+  .add-teacher div,
+  .add-student div{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .add-course div span,
+  .add-teacher div span,
+  .add-student div span{
+    margin-bottom: 1rem;
+  }
+  .remove-course,
+  .remove-teacher,
+  .remove-student{
+    height: 100%;
+  }
+  .remove-course div,
+  .remove-teacher div,
+  .remove-student div{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .remove-course div span,
+  .remove-teacher div span,
+  .remove-student div span{
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+  .remove-course div input,
+  .remove-teacher div input,
+  .remove-student div input{
+    width: 100%;
+  }
+  .remove-course button,
+  .remove-teacher button,
+  .remove-student button{
+    width: 100%;
+  }
+  .single-course,
+  .single-teacher,
+  .single-student{
+    flex-direction: column;
+  }
+  .single-course img,
+  .single-teacher img,
+  .single-student img{
+    margin-bottom: 1rem;
+  }
+  .single-course .name, .single-course span,
+  .single-teacher .name, .single-teacher span,
+  .single-student .name, .single-student span{
+    margin-bottom: 1rem;
+  }
+
+  .course-container{
+    width: 100%;
+  }
+
+  footer,
+  .footer-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  footer {
+    padding: 5rem 2rem;
+  }
+  .footer-info div {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem 0;
+  }
+  .footer-info svg {
+    width: 3rem;
+    height: 3rem;
+  }
+  .footer-info div span {
+    font-size: 1.75rem;
+  }
+  footer span {
+    font-size: 2rem;
+  }
+}

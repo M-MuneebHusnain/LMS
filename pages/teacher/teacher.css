@@ -1,0 +1,551 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+header {
+  width: 100%;
+  height: 10rem;
+  background: royalblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10rem;
+}
+
+header span {
+  font: 800 2.5rem sans-serif;
+  color: white;
+  z-index: 2;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 50%;
+}
+
+.menu a {
+  font: 500 2.5rem sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+a.logout-btn {
+  width: 20rem;
+  height: 5rem;
+  border-radius: 1rem;
+  background: navy;
+  color: yellow;
+  display: grid;
+  place-items: center;
+}
+
+.burger {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  display: none;
+}
+
+.burger div {
+  width: 100%;
+  height: 1rem;
+  background-color: white;
+  transition: transform 0.25s ease-in-out;
+}
+
+.burger.active div:nth-child(1) {
+  transform: rotate(45deg) translateY(27.5px);
+}
+
+.burger.active div:nth-child(2) {
+  display: none;
+}
+
+.burger.active div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-27.5px);
+}
+
+main{
+  padding: 5rem 10rem;
+}
+
+section{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 5rem 0;
+
+}
+
+.course{
+  margin: 3rem 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.course img{
+  width: 50%;
+  height: 50%;
+  border-radius: 5rem;
+}
+
+.course div{
+  display: flex;
+  width: 100%;
+}
+
+.info{
+  width: 100%;
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info p span{
+  font: 300 3rem sans-serif;
+  margin: 0 2rem;
+}
+
+.color{
+  color: green;
+}
+
+.colorR{
+  color: red;
+}
+
+.info button{
+  width: 100%;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  background-color: royalblue;
+  color: white;
+  font: 300 2rem sans-serif;
+  border-radius: 1rem;
+}
+
+.course h5{
+  font: 600 3rem sans-serif;
+}
+
+section h3{
+  font: 600 5rem sans-serif;
+}
+
+.add{
+  margin: 5rem 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.action{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 3rem;
+}
+
+.action button{
+  width: 20%;
+  height: 5rem;
+  background: royalblue;
+  border-radius: 1rem;
+  color: white;
+  margin-right: 2rem;
+  font: 300 2rem sans-serif;
+}
+
+.action button.action-close{
+  background-color: red;
+  display: none;
+}
+
+textarea{
+  resize: none;
+}
+
+.add .lecture{
+  width: 100%;
+  margin-bottom: 3rem;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lecture div{
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.lecture span{
+  font: 300 2rem sans-serif;
+  margin-right: 2rem;
+}
+
+.lecture div.txt{
+  align-items: flex-start;
+}
+
+.lecture input{
+  width: 100%;
+  height: 5rem;
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+.lecture textarea{
+  width: 100%;
+  height: 50rem;
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+.lecture button{
+  width: 50%;
+  height: 5rem;
+  border-radius: 1rem;
+  background-color: royalblue;
+  color: white;
+  font: 300 2rem sans-serif;
+  align-self: flex-end;
+}
+
+.course .lecture-container,
+.course .quiz-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.add .quiz{
+  width: 100%;
+  height: 100%;
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3rem ;
+}
+
+.quiz div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.quiz span{
+  font: 300 2rem sans-serif;
+  flex-basis: 30%;
+}
+
+.quiz input{
+  width: 100%;
+  height: 5rem;
+  border: 1px solid black;
+}
+
+.quiz button{
+  width: 100%;
+  height: 5rem;
+  background-color: royalblue;
+  color: white;
+  font: 300 2rem sans-serif;
+  border-radius: 1rem;
+  grid-column: 1/3;
+  grid-row: 4/5;
+}
+
+.student{
+  width: 100%;
+  height: 5rem;
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.student .name{
+  font: 300 2rem sans-serif;
+  flex-basis: 10%;
+}
+
+.student .status{
+  display: flex;
+  align-items: center;
+  font: 300 2rem sans-serif;
+  flex-basis: 20%;
+}
+
+.student .status span{
+  margin: 0 1rem;
+}
+
+.student button{
+  width: 20rem;
+  height: 5rem;
+  background-color: royalblue;
+  border-radius: 1rem;
+  color: white;
+  font: 300 2rem sans-serif;
+}
+
+footer {
+  padding: 5rem 10rem;
+  width: 100%;
+  height: 40rem;
+  background-color: royalblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer span {
+  font: 300 3rem sans-serif;
+  color: white;
+}
+
+.footer-info {
+  display: grid;
+  height: 100%;
+}
+
+.footer-info div {
+  display: flex;
+  align-items: center;
+}
+
+.footer-info svg {
+  width: 4rem;
+  height: 4rem;
+  fill: #fff;
+  margin-right: 3rem;
+}
+
+.footer-info div span {
+  font: 300 2.5rem sans-serif;
+  color: white;
+}
+
+.moveToTop {
+  width: 10rem;
+  height: 10rem;
+  fill: yellow;
+  background: navy;
+  padding: 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+@media (max-width: 1400px) {
+  header, footer, main {
+    padding: 5rem;
+  }
+  footer {
+    flex-direction: column;
+    height: 100%;
+  }
+  .footer-info {
+    width: 100%;
+    justify-content: space-between;
+    column-gap: 5rem;
+  }
+  footer span {
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 1250px) {
+  header {
+    position: relative;
+  }
+
+  .burger {
+    display: flex;
+  }
+  header .menu {
+    position: absolute;
+    top: -30rem;
+    width: 100%;
+    height: 30rem;
+    flex-basis: unset;
+    background-color: royalblue;
+    left: 0;
+    padding: 5rem;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: top 0.25s ease-in-out;
+    opacity: 0;
+  }
+  header .menu.active {
+    top: 10rem;
+    opacity: 1;
+  }
+
+  .lecture div,
+  .quiz div{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lecture button{
+    width: 100%;
+  }
+  .lecture span,
+  .quiz span{
+    margin: 1rem 0;
+  }
+
+  .course div{
+    flex-direction: column;
+  }
+
+  .course img{
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .info{
+    margin: 0;
+  }
+  
+  .course h5,
+  .info p{
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .course div.action{
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 765px) {
+  .footer-info div span {
+    font-size: 2rem;
+  }
+  .loginForm {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 650px) {
+  header,footer {
+    padding: 0 2rem;
+  }
+
+  header .menu {
+    align-items: center;
+    top: -100vh;
+    height: calc(100vh - 10rem);
+    justify-content: space-evenly;
+  }
+
+  .add .quiz{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .quiz button{
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+
+  .course div.action{
+    flex-direction: column;
+  }
+  .action button{
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .student{
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .student .name,
+  .student .status,
+  .student button{
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .student .status span{
+    width: 100%;
+  }
+
+  footer,
+  .footer-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  footer {
+    padding: 5rem 2rem;
+  }
+  .footer-info div {
+    /* flex-direction: column; */
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem 0;
+  }
+  .footer-info svg {
+    width: 3rem;
+    height: 3rem;
+  }
+  .footer-info div span {
+    font-size: 1.75rem;
+  }
+  footer span {
+    font-size: 2rem;
+  }
+}

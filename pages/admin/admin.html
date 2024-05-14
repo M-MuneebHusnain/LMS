@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="./admin.css">
+    <script defer src="./admin.js"></script>
+</head>
+<body>
+    <header>
+        <span>
+            Learning Management System
+        </span>
+        <div class="menu">
+            <a href="#students">Students</a>
+            <a href="#teachers">Teachers</a>
+            <a href="#courses">Courses</a>
+            <a href="../../index.html" class="logout-btn">Logout</a>
+        </div>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="students">
+            <h1>Students</h1>
+            <div class="actions">
+                <button class="add-action">Add Student</button>
+                <button class="remove-action">Remove Student</button>
+                <button class="all-action">Close</button>
+            </div>
+            <div class="add-student">
+                <h3>Add new student</h3>
+                <div>
+                    <span>Full Name</span>
+                    <input class="student-name" type="text">
+                </div>
+                <div>
+                    <span>Mail</span>
+                    <input class="student-mail" type="email">
+                </div>
+                <div>
+                    <span>Password</span>
+                    <input class="student-password" type="text">
+                </div>
+                <div>
+                    <span>Image</span>
+                    <input class="student-image" type="text">
+                </div>
+                <button class="add-student-button">Add</button>
+            </div>
+            <div class="remove-student">
+                <h3>Remove Student</h3>
+                <div>
+                    <span>Students ID</span>
+                    <input type="text">
+                </div>
+                <button class="remove-student-button">Remove</button>
+            </div>
+            <div class="student container">
+
+            </div>
+        </section>
+        <!-- TEACHERS -->
+        <section id="teachers">
+            <h1>Teachers</h1>
+            <div class="actions">
+                <button class="add-actionT">Add Teacher</button>
+                <button class="remove-actionT">Remove Teacher</button>
+                <button class="all-actionT">Close</button>
+            </div>
+            <div class="add-teacher">
+                <h3>Add new Teacher</h3>
+                <div>
+                    <span>Full Name</span>
+                    <input class="teacher-name" type="text">
+                </div>
+                <div>
+                    <span>Mail</span>
+                    <input class="teacher-mail" type="email">
+                </div>
+                <div>
+                    <span>Password</span>
+                    <input class="teacher-password" type="text">
+                </div>
+                <div>
+                    <span>Image</span>
+                    <input class="teacher-image" type="text">
+                </div>
+                <button class="add-teacher-button">Add</button>
+            </div>
+            <div class="remove-teacher">
+                <h3>Remove teacher</h3>
+                <div>
+                    <span>Teachers ID</span>
+                    <input type="text">
+                </div>
+                <button class="remove-teacher-button">Remove</button>
+            </div>
+            <div class="teacher container">
+                
+            </div>
+        </section>
+        <!-- COURSES -->
+        <section id="courses">
+            <h1>Courses</h1>
+            <div class="actions">
+                <button class="add-actionC">Add Course</button>
+                <button class="remove-actionC">Remove Course</button>
+                <button class="assign-actionS">Assign Student</button>
+                <button class="all-actionC">Close</button>
+            </div>
+            <div class="add-course">
+                <h3>Add new course</h3>
+                <div>
+                    <span>Course Name</span>
+                    <input class="course-name-input" type="text">
+                </div>
+                <div>
+                    <span>Teacher</span>
+                    <input class="course-teacher" type="text">
+                </div>
+                <div>
+                    <span>Image</span>
+                    <input class="course-image" type="text">
+                </div>
+                <button class="add-course-button">Add</button>
+            </div>
+            <div class="remove-course">
+                <h3>Remove course</h3>
+                <div>
+                    <span>Course ID</span>
+                    <input type="text">
+                </div>
+                <button class="remove-course-button">Remove</button>
+            </div>
+
+            <div class="assign-student">
+                <h3>Assign student</h3>
+                <div class="assign-student-info">
+                    <div>
+                        <span>Course ID</span>
+                        <input class="assign-course-id" type="text">
+                    </div>
+                    <div>
+                        <span>Student Name</span>
+                        <input class="assign-student-name" type="text">
+                    </div>
+                </div>
+                <button>Assign</button>
+            </div>
+
+            <div class="course container">
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+                <span>mylms@lms.com</span>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+                <span>Lahore Garrison University, DHA Phase 6 Lahore.</span>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 2c0-1.104-.896-2-2-2h-10c-1.104 0-2 .896-2 2v20c0 1.104.896 2 2 2h10c1.104 0 2-.896 2-2v-20zm-8.5 0h3c.276 0 .5.224.5.5s-.224.5-.5.5h-3c-.276 0-.5-.224-.5-.5s.224-.5.5-.5zm1.5 20c-.553 0-1-.448-1-1s.447-1 1-1c.552 0 .999.448.999 1s-.447 1-.999 1zm5-3h-10v-14.024h10v14.024z"/></svg>
+                <span>042-37181822</span>
+            </div>
+        </div>
+        <span>all rights reserved.®</span>
+        <svg class="moveToTop" width="24" height="24" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.001 10.978h-3.251c-.412 0-.75-.335-.75-.752 0-.188.071-.375.206-.518 1.685-1.775 4.692-4.945 6.069-6.396.189-.2.452-.312.725-.312.274 0 .536.112.725.312 1.377 1.451 4.385 4.621 6.068 6.396.136.143.207.33.207.518 0 .417-.337.752-.75.752h-3.251v9.02c0 .531-.47 1.002-1 1.002h-3.998c-.53 0-1-.471-1-1.002z" fill-rule="nonzero"/></svg>
+    </footer>
+    
+</body>
+</html>
